@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'zbekiston Sayohat - Modern Travel Experience</title>
+    <meta name="description" content="O'zbekistonning chiroyli joylarini kashf eting. Madaniy meros, tarix va zamonaviy sayohat tajribasi.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="O'zbekiston Sayohat">
+                    <span>O'zbekiston Sayohat</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Bosh Sahifa</a></li>
+                    <li><a href="#cities">Shaharlar</a></li>
+                    <li><a href="#tourism">Sayohat Turlari</a></li>
+                    <li><a href="#heritage">Madaniy Meros</a></li>
+                    <li><a href="#gallery">Galeriya</a></li>
+                    <li><a href="#contact">Bog'lanish</a></li>
+                </ul>
+                <div class="nav-actions">
+
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="img/samarkand-hero.jpg" alt="Samarkand Registan" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>O'zbekiston Manzaralarini Kashf Et</h1>
+                <p>Tarixiy shaharlar, boy madaniyat va ajoyib tabiat manzaralari bilan tanishing</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">16</span>
+                        <span class="stat-label">Shahar</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">Yillik Tarix</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">UNESCO Merosi</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#cities" class="btn btn-primary">
+                        <i class="fas fa-map-marked-alt"></i> Shaharlarni Ko'rish
+                    </a>
+                    <a href="#tourism" class="btn btn-secondary">
+                        <i class="fas fa-compass"></i> Sayohat Rejalari
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-mountain"></i>
+                        <span>Tabiat</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-utensils"></i>
+                        <span>Osh</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-landmark"></i>
+                        <span>Tarix</span>
+                    </div>
+                    <div class="floating-card card-4">
+                        <i class="fas fa-palette"></i>
+                        <span>San'at</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Section -->
+    <section id="cities" class="cities">
+        <div class="container">
+            <div class="section-header">
+                <h2>O'zbekiston Shaharlari va Viloyatlari</h2>
+                <p>Har bir viloyat va shahar o'ziga xos hikoya va go'zallikka ega</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="region-filters">
+                <button class="filter-btn active" data-filter="all">Barchasi</button>
+                <button class="filter-btn" data-filter="republic">Respublika</button>
+                <button class="filter-btn" data-filter="republic-city">Respublika shaharlari</button>
+                <button class="filter-btn" data-filter="capital">Poytaxt</button>
+                <button class="filter-btn" data-filter="city">Shaharlar</button>
+                <button class="filter-btn" data-filter="region">Viloyatlar</button>
+            </div>
+
+            <!-- Cities Grid -->
+            <div class="cities-grid" id="citiesGrid"></div>
+
+            <!-- Cities Data (Hidden) -->
+            <script id="citiesData" type="application/json">
+                {
+                    "cities": [{
+                        "id": "karakalpakstan",
+                        "name": "Qoraqalpog'iston Respublikasi",
+                        "type": "republic",
+                        "description": "O'zbekistonning muxtor respublikasi",
+                        "population": "1.9M aholi",
+                        "image": "img/karakalpakstan_region_9.jpg",
+                        "attractions": [{
+                            "name": "Nukus",
+                            "icon": "fas fa-city",
+                            "description": "Respublika poytaxti",
+                            "image": "img/nukus_city_3.jpg",
+                            "details": "Qoraqalpog'iston Respublikasining poytaxti. 1932 yildan respublika markazi. Aytlar nomi bilan ham mashhur.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Mizdak qal'a",
+                            "icon": "fas fa-castle",
+                            "description": "Qadimgi qal'a",
+                            "image": "img/mizdaq_kala_8.JPG",
+                            "details": "Mizdaq qal'asi - Qoraqalpog'istonning eng mashhur tarixiy yodgorligi. 1-asrda qurilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 15,000 so'm"
+                        }, {
+                            "name": "Aral dengizi",
+                            "icon": "fas fa-water",
+                            "description": "Tabiat mo'jizasi",
+                            "image": "img/aral_sea_0.jpg",
+                            "details": "Dunyo bo'ylab mashhur Aral dengizi. Tabiat qayta tiklash loyihasi muvaffaqiyatli amalga oshirilmoqda.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish bepul"
+                        }]
+                    }, {
+                        "id": "tashkent",
+                        "name": "Toshkent",
+                        "type": "capital",
+                        "description": "Zamonaviy poytaxt va transport markazi",
+                        "population": "2.4M aholi",
+                        "image": "img/tashkent-city.jpg",
+                        "attractions": [{
+                            "name": "Amir Temur maydoni",
+                            "icon": "fas fa-crown",
+                            "description": "O'zbekistonning markaziy maydoni",
+                            "image": "img/tashkent-amir-temur.jpg",
+                            "details": "O'zbekiston poytaxtining markaziy maydoni. Bu yerda Amir Temurning haykali joylashgan bo'lib, u O'zbekistonning eng muhim tarixiy joylaridan biridir.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish: bepul"
+                        }, {
+                            "name": "Metro tizimi",
+                            "icon": "fas fa-subway",
+                            "description": "Zamonaviy metro tizimi",
+                            "image": "img/tashkent-metro.jpg",
+                            "details": "O'zbekistonning birinchi va Markaziy Osiyodagi eng chiroyli metro tizimi. Har bir bekat o'ziga xos me'morchilik uslubi va bezaklari bilan mashhur.",
+                            "visitInfo": "Ish vaqti: 05:30-24:00 | Narx: 1200 so'm"
+                        }, {
+                            "name": "Televideniye minorasi",
+                            "icon": "fas fa-tower-broadcast",
+                            "description": "O'zbekistonning yuqori binolari",
+                            "image": "img/tashkent-tower.jpg",
+                            "details": "Toshkent shahrining eng baland inshooti. Minor 385 metr balandlikda bo'lib, radio va televidenie tarqalish markazi hisoblanadi.",
+                            "visitInfo": "Tashrif buyurish imkoniyati: cheklangan"
+                        }]
+                    }, {
+                        "id": "samarkand",
+                        "name": "Samarqand",
+                        "type": "city",
+                        "description": "Silk Roadning durdonasi",
+                        "population": "UNESCO World Heritage",
+                        "image": "img/samarkand-city.jpg",
+                        "attractions": [{
+                            "name": "Registon maydoni",
+                            "icon": "fas fa-monument",
+                            "description": "Xivolshshash madrasasi",
+                            "image": "img/samarkand-registan.jpg",
+                            "details": "Samarqandning eng mashhur maydoni. Uchta tarixiy madrasa joylashgan bu yer Silk Roadning markazi bo'lgan va UNESCO World Heritage site hisoblanadi.",
+                            "visitInfo": "Ish vaqti: 08:00-20:00 | Kirish narxi: 20,000 so'm"
+                        }, {
+                            "name": "Gur-i Amir",
+                            "icon": "fas fa-tomb",
+                            "description": "Amir Temur maqbarasi",
+                            "image": "img/samarkand-gur-amir.webp",
+                            "details": "Amir Temur va uning oilasining maqbarasi. 1404-1406 yillar orasida qurilgan bu maqbaraga 45 ta davlatdan ziyolilar dafn etilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-19:00 | Kirish narxi: 15,000 so'm"
+                        }, {
+                            "name": "Bibi-Xonim masjidi",
+                            "icon": "fas fa-mosque",
+                            "description": "Tarixiy namozgoh",
+                            "image": "img/samarkand-bibi.jpg",
+                            "details": "Samarqandning eng katta masjidi. 1404 yilda Amir Temur tomonidan qurilgan. Mashhur 'Ko'z xonim' nomi bilan ham tanilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }]
+                    }, {
+                        "id": "bukhara",
+                        "name": "Buxoro",
+                        "type": "city",
+                        "description": "Islom madaniyatining markazi",
+                        "population": "1400+ yil tarix",
+                        "image": "img/bukhara-city.jpg",
+                        "attractions": [{
+                            "name": "Po-i-Kalyon majmuasi",
+                            "icon": "fas fa-mosque",
+                            "description": "Madrasa va masjid majmuasi",
+                            "image": "img/bukhara-kalyon.jpg",
+                            "details": "Buxoroning eng mashhur majmuasi. Kalyon minorasi va madrasalar bir joyda joylashgan. 16-asrda qurilgan bu majmua islom me'morchiligining nodir namunasi.",
+                            "visitInfo": "Ish vaqti: 08:00-20:00 | Kirish narxi: 25,000 so'm"
+                        }, {
+                            "name": "Ark qal'asi",
+                            "icon": "fas fa-fort-awesome",
+                            "description": "Qadimgi qal'a va saroy",
+                            "image": "img/bukhara-ark.jpg",
+                            "details": "Buxoroning eng qadimgi arki. Miloddan avvalgi 4-asrdan boshlab qurilgan. Emirlarning rasmiy saroyi va ma'muriy markazi bo'lgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 20,000 so'm"
+                        }, {
+                            "name": "Lab-i Xauz",
+                            "icon": "fas fa-water",
+                            "description": "Tarixiy hovuz va majmua",
+                            "image": "img/bukhara-lab-hauz.jpg",
+                            "details": "Buxoroning eng chiroyli maydoni. 17-asrda qurilgan hovuz atrofida uchta tarixiy madrasa joylashgan. Kukaldosh madrasasi ham shu yerda.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish bepul"
+                        }, {
+                            "name": "Qorakuqon maqbarasi",
+                            "icon": "fas fa-tomb",
+                            "description": "Qadimgi maqbara majmuasi",
+                            "image": "img/bukhara-qorakuqon.jpg",
+                            "details": "Buxoroning eng qadimgi maqbarasi. 10-12 asrlar oralig'ida qurilgan. Bir necha din peshlari va ziyolilarning maqbarasi joylashgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 15,000 so'm"
+                        }]
+                    }, {
+                        "id": "khiva",
+                        "name": "Xiva",
+                        "type": "city",
+                        "description": "Xivadagi ichki shahar merosi",
+                        "population": "Kunyali shahar",
+                        "image": "img/khiva-city.webp",
+                        "attractions": [{
+                            "name": "Ichan Qala",
+                            "icon": "fas fa-castle",
+                            "description": "UNESCO World Heritage",
+                            "image": "img/khiva_ichan_qala_3.jpg",
+                            "details": "Xivadagi ichki shahar, UNESCO Jahon merosi ro'yxatiga kiritilgan. 2500 yillik tarixga ega bo'lgan bu qal'a ichida 50 dan ortiq tarixiy yodgorliklar mavjud.",
+                            "visitInfo": "Ish vaqti: 09:00-20:00 | Kirish narxi: 30,000 so'm"
+                        }, {
+                            "name": "Qo'ja minarasi",
+                            "icon": "fas fa-tower-broadcast",
+                            "description": "Yuqori minora",
+                            "image": "img/khiva_qoja_minora_5.jpg",
+                            "details": "Xivadagi eng mashhur minora. 1852-1853 yillarda qurilgan. 26 metr balandlikda bo'lib, 'qora minora' deb ham ataladi.",
+                            "visitInfo": "Ish vaqti: 09:00-19:00 | Kirish narxi: 15,000 so'm"
+                        }, {
+                            "name": "Ichan Qala devori",
+                            "icon": "fas fa-shield-alt",
+                            "description": "Qal'a devorlari",
+                            "image": "img/khiva_wall_8.jpg",
+                            "details": "Xivaning himoyalovchi devorlari. 4 km uzunlikdagi devor va 4 ta darvoza mavjud. 10-asrlardan boshlab qurila boshlangan.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish bepul"
+                        }]
+                    }, {
+                        "id": "fergana-region",
+                        "name": "Farg'ona viloyati",
+                        "type": "region",
+                        "description": "Chashma va baliq yerlari",
+                        "population": "3.7M aholi",
+                        "image": "img/fergana-valley.jpg",
+                        "attractions": [{
+                            "name": "Farg'ona",
+                            "icon": "fas fa-city",
+                            "description": "Viloyat markazi",
+                            "image": "img/fergana_city_6.jpg",
+                            "details": "Farg'ona viloyatining poytaxti. O'zbekistoning markaziy qismidagi yirik shahar. Iqtisodiy markaz.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Rishtan",
+                            "icon": "fas fa-vase",
+                            "description": "Milliy sopol hunarmandligi",
+                            "image": "img/fergana-rishtan.jpg",
+                            "details": "O'zbekistonning mashhur sopol markazi. 8-asrlardan boshlab rishtan sopollari butun Osiyoga mashhur. Rang-bargli naqshlar va noyob ranglar bilan mashhur.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: bepul (ustaxonalar)"
+                        }, {
+                            "name": "Quva",
+                            "icon": "fas fa-industry",
+                            "description": "Neft va gaz hududi",
+                            "image": "img/fergana-quva.png",
+                            "details": "Farg'ona vodiysining muhim sanoat markazi. Neft, gaz va kimyo sanoati rivojlangan. Qadimgi Quva shahri 14-asrdan mavjud.",
+                            "visitInfo": "Tashrif buyurish: avval ruxsat olish kerak"
+                        }, {
+                            "name": "Qo'stanov",
+                            "icon": "fas fa-tree",
+                            "description": "Bog'dorchilik markazi",
+                            "image": "img/fergana-qo-stanov.png",
+                            "details": "Farg'ona vodiysining bog'dorchilik markazi. Olma, nok, uzum va shaftoli yetishtirish bilan mashhur. Go'zal tabiat va tog'li manzaralar.",
+                            "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: 5,000 so'm"
+                        }, {
+                            "name": "Ozbekiston tumani",
+                            "icon": "fas fa-map",
+                            "description": "Ma'muriy tuman",
+                            "image": "img/uzbekiston_district_1.png",
+                            "details": "Farg'ona viloyatining yirik tumanlardan biri. Qishloq xo'jaligi va sanoat rivojlangan.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Rishtan tumani",
+                            "icon": "fas fa-palette",
+                            "description": "Sopol ustaxonalari",
+                            "image": "img/rishtan_district_6.jpg",
+                            "details": "Rishtan sopol san'atining markazi. 200+ ustaxona faoliyat yuritadi. Dunyo bo'ylab taniqli.",
+                            "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul"
+                        }]
+                    }, {
+                        "id": "andijan",
+                        "name": "Andijon",
+                        "type": "city",
+                        "description": "Madaniyat va ma'rifat markazi",
+                        "population": "1.2M aholi",
+                        "image": "img/andijan.jpg",
+                        "attractions": [{
+                            "name": "Bobur bog'i",
+                            "icon": "fas fa-leaf",
+                            "description": "Zahiriddin Bobur hajviyotari",
+                            "image": "img/andijan-babur.jpg",
+                            "details": "Zahiriddin Boburning tavallud topgan joyida qurilgan maqbara va bog'. Bobur Hindistonda Boburiylar imperiyasining asoschisi.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }, {
+                            "name": "Jalaliddin Manguberdi maqbarasi",
+                            "icon": "fas fa-tomb",
+                            "description": "Tarixiy shaxs maqbarasi",
+                            "image": "img/andijan-manguberdi.jpg",
+                            "details": "Mongollar davrida yashagan qahramon Jalaliddin Manguberdi maqbarasi. Afg'oniston va O'zbekiston bo'ylab ozodlik kurashi olib borgan.",
+                            "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 5,000 so'm"
+                        }, {
+                            "name": "Andijon me'morchiligi",
+                            "icon": "fas fa-building",
+                            "description": "Zamonaviy me'morchilik",
+                            "image": "img/andijan.jpg",
+                            "details": "Andijon shahrining zamonaviy me'morchiligi. Yangi bino va inshootlar qurilishi faol davom etmoqda. Arxitektura namunasi sifatida ko'rsatiladi.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }]
+                    }, {
+                        "id": "bukhara-region",
+                        "name": "Buxoro viloyati",
+                        "type": "region",
+                        "description": "Madaniyat va tarix markazi",
+                        "population": "2.1M aholi",
+                        "image": "img/bukhara-city.jpg",
+                        "attractions": [{
+                            "name": "Buxoro",
+                            "icon": "fas fa-city",
+                            "description": "Viloyat markazi",
+                            "image": "img/bukhara-city.jpg",
+                            "details": "Buxoro viloyatining poytaxti. 2500 yillik tarixga ega. Islom madaniyatining markazi.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "G'ijduvon",
+                            "icon": "fas fa-palette",
+                            "description": "Hunarmandlik markazi",
+                            "image": "img/bukhara-gijduvan.jpg",
+                            "details": "Buxoro viloyatining hunarmandlik markazi. 12-asrlardan boshlab matolar va kashtalar tayyorlash bilan mashhur. UNESCO Intangible Heritage.",
+                            "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul (ustaxonalar)"
+                        }, {
+                            "name": "Qorakuqon",
+                            "icon": "fas fa-monument",
+                            "description": "Tarixiy yodgorlik",
+                            "image": "img/bukhara-qorakuqon.jpg",
+                            "details": "Buxoro viloyatining eng qadimgi maqbarasi. 10-12 asrlar oralig'ida qurilgan. Bir necha olim va din peshlari dafn etilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }, {
+                            "name": "G'ijduvon keramikasi",
+                            "icon": "fas fa-vase",
+                            "description": "UNESCO meroslari",
+                            "image": "img/bukhara-gijduvan.jpg",
+                            "details": "Dunyo bo'ylab mashhur G'ijduvon sopollari. Hovur va bezakli naqshlar bilan bezatilgan noyob keramika mahsulotlari tayyorlanadi.",
+                            "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul (ustaxonalar)"
+                        }, {
+                            "name": "Qorakuqon tumani",
+                            "icon": "fas fa-map",
+                            "description": "Ma'muriy tuman",
+                            "image": "img/qorakuqon_district_4.jpg",
+                            "details": "Buxoro viloyatining muhim tumani. Qishloq xo'jaligi va chorvachilik rivojlangan.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }]
+                    }, {
+                        "id": "jizzakh",
+                        "name": "Jizzax viloyati",
+                        "type": "region",
+                        "description": "Maden va qadimgi meroslar",
+                        "population": "1.4M aholi",
+                        "image": "img/jizzakh-region.jpg",
+                        "attractions": [{
+                            "name": "Zomin",
+                            "icon": "fas fa-mountain",
+                            "description": "Tabiat manzarasi",
+                            "image": "img/jizzakh-zomin.jpg",
+                            "details": "Zomin milliy parki hududidagi go'zal tog'li hudud. To'q qizil toshlar va noyob tabiat manzaralari. Piknik va sayohat uchun mashhur joy.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 5,000 so'm"
+                        }, {
+                            "name": "Sariosiyo",
+                            "icon": "fas fa-water",
+                            "description": "Suzman qal'asi",
+                            "image": "img/jizzakh-sariasiyaq.jpg",
+                            "details": "Jizzaxdagi qadimgi suv inshooti. 12-asrda qurilgan bu qal'a suvni to'plash va sug'orish uchun xizmat qilgan.",
+                            "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 8,000 so'm"
+                        }, {
+                            "name": "Zomin milliy parki",
+                            "icon": "fas fa-tree",
+                            "description": "Tabiat va hayotlar",
+                            "image": "img/jizzakh-park.jpg",
+                            "details": "O'zbekistonning eng yirik milliy parklaridan biri. 26,000 ga maydonni egallaydi. Noyob hayvonlar va o'simliklar yashaydi.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }]
+                    }, {
+                        "id": "namangan",
+                        "name": "Namangan viloyati",
+                        "type": "region",
+                        "description": "Oshxona va matolari",
+                        "population": "2.8M aholi",
+                        "image": "img/namangan-region.jpg",
+                        "attractions": [{
+                            "name": "Po'poq",
+                            "icon": "fas fa-birthday-cake",
+                            "description": "Mahalliy shirinliklar",
+                            "image": "img/namangan-popok.jpg",
+                            "details": "Namanganning mashhur shirinligi. Mahalliy xonliklar davridan beri tayyorlanadi. Un va shakar asosida tayyorlanadi.",
+                            "visitInfo": "Ish vaqti: 07:00-20:00 | Narx: 2,000-5,000 so'm"
+                        }, {
+                            "name": "O'zbekiston banknot fabrikasi",
+                            "icon": "fas fa-money-bill-wave",
+                            "description": "Iqtisodiy markaz",
+                            "image": "img/namangan-bank.jpg",
+                            "details": "O'zbekistonning pul tayyorlovchi zavodi. 2018 yildan faoliyat yuritmoqda. O'zbekistonning asosiy banknotlari shu yerda tayyorlanadi.",
+                            "visitInfo": "Tashrif buyurish: maxsus ruxsat bilan"
+                        }, {
+                            "name": "Chorvoq",
+                            "icon": "fas fa-water",
+                            "description": "Tabiat manzarasi",
+                            "image": "img/namangan-chorvoq.jpg",
+                            "details": "Namangandagi go'zal suv havzasi. Tog'li hududdagi tabiat manzarasi. Dam olish va sayohat uchun mashhur joy.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+                        }]
+                    }, {
+                        "id": "navoiy",
+                        "name": "Navoiy viloyati",
+                        "type": "region",
+                        "description": "Kimyo va maden sanoati",
+                        "population": "950K aholi",
+                        "image": "img/navoiy-region.jpg",
+                        "attractions": [{
+                            "name": "Navoiy shahri",
+                            "icon": "fas fa-industry",
+                            "description": "Zamonaviy sanoat markazi",
+                            "image": "img/navoiy-city.jpg",
+                            "details": "O'zbekistonning yirik sanoat markazlardan biri. Kimyo va metallurgiya sanoati rivojlangan. Alisher Navoiy sharafiga nomlangan.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Bermuda",
+                            "icon": "fas fa-mountain",
+                            "description": "Tabiat manzarasi",
+                            "image": "img/navoiy-bermuda.jpg",
+                            "details": "Navoiy viloyatidagi noyob tabiat manzarasi. Quvnoq qizil toshlar va kanyonlar. Tabiatni sevuvchilar uchun ideal joy.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 8,000 so'm"
+                        }, {
+                            "name": "Karakum",
+                            "icon": "fas fa-tree",
+                            "description": "Cho'l hududi",
+                            "image": "img/navoiy-karakum.jpg",
+                            "details": "Dunyo bo'ylab mashhur Karakum cho'lining bir qismi. Quvnoq qumlar va cho'l o'simliklari. Kamel safari uchun mashhur.",
+                            "visitInfo": "Safari narxi: 50-100 USD"
+                        }]
+                    }, {
+                        "id": "kashkadarya",
+                        "name": "Qashqadaryo viloyati",
+                        "type": "region",
+                        "description": "Shirin suvlar va yaxmalar",
+                        "population": "3.3M aholi",
+                        "image": "img/kashkadarya-region.jpg",
+                        "attractions": [{
+                            "name": "Qarshi",
+                            "icon": "fas fa-city",
+                            "description": "Viloyat markazi",
+                            "image": "img/kashkadarya-karshi.jpg",
+                            "details": "Qashqadaryo viloyatining markazi. 14-asrlardan mavjud. Qarshi Nohiyonining poytaxti bo'lgan. Yirik savdo markazi.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Shahrisabz",
+                            "icon": "fas fa-crown",
+                            "description": "Amir Temur tug'ilgan joyi",
+                            "image": "img/kashkadarya-shakhrisabz.jpg",
+                            "details": "Amir Temurning tug'ilgan joyi. Ak-Tepe majmuasi va Dorut Tilovat joylashgan. UNESCO World Heritage site hisoblanadi.",
+                            "visitInfo": "Ish vaqti: 08:00-19:00 | Kirish narxi: 25,000 so'm"
+                        }, {
+                            "name": "Sariosiyo daryosi",
+                            "icon": "fas fa-water",
+                            "description": "Tabiat manzarasi",
+                            "image": "img/kashkadarya-dam.jpg",
+                            "details": "Qashqadaryoning eng chiroyli daryosi. Toza suv va go'zal tabiat manzaralari. Baliq ovlash va tabiat sayohatlari uchun mashhur.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+                        }]
+                    }, {
+                        "id": "samarqand-region",
+                        "name": "Samarqand viloyati",
+                        "type": "region",
+                        "description": "Silk Road meroslari",
+                        "population": "3.8M aholi",
+                        "image": "img/samarkand-city.jpg",
+                        "attractions": [{
+                            "name": "Urg'ut",
+                            "icon": "fas fa-tree",
+                            "description": "Bog'dorchilik markazi",
+                            "image": "img/samarkand-urgut.jpg",
+                            "details": "Samarqand viloyatining bog'dorchilik markazi. Olma, nok va uzum yetishtirish bilan mashhur. Go'zal tabiat va meva bog'lari.",
+                            "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul"
+                        }, {
+                            "name": "Qo'rg'onchiq",
+                            "icon": "fas fa-monument",
+                            "description": "Tarixiy yodgorlik",
+                            "image": "img/samarkand-qurghonchiq.jpg",
+                            "details": "Samarqand viloyatidagi qadimgi yodgorlik. 14-15 asrlar orasida qurilgan. Qarshi amirligining muhim yodgorligi.",
+                            "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 8,000 so'm"
+                        }, {
+                            "name": "O'zbekiston tarixi muzeyi",
+                            "icon": "fas fa-landmark",
+                            "description": "Madaniyat markazi",
+                            "image": "img/samarkand-museum.jpg",
+                            "details": "Samarqand viloyatining asosiy tarix muzeyi. 1954 yildan faoliyat yuritadi. 60,000 dan ortiq eksponat mavjud.",
+                            "visitInfo": "Ish vaqti: 09:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }]
+                    }, {
+                        "id": "sirdaryo",
+                        "name": "Sirdaryo viloyati",
+                        "type": "region",
+                        "description": "Qishloq xo'jaligi markazi",
+                        "population": "800K aholi",
+                        "image": "img/sirdaryo-region.jpg",
+                        "attractions": [{
+                            "name": "G'uzor",
+                            "icon": "fas fa-leaf",
+                            "description": "Qishloq xo'jaligi",
+                            "image": "img/sirdaryo-guzor.jpg",
+                            "details": "Sirdaryo viloyatining qishloq xo'jaligi markazi. G'uzor, paxta va bug'doy yetishtirish bilan mashhur. Tabiatning boyligi.",
+                            "visitInfo": "Ish vaqti: erkin | Kirish narxi: bepul"
+                        }, {
+                            "name": "Boychashma",
+                            "icon": "fas fa-water",
+                            "description": "Suzman joylari",
+                            "image": "img/sirdaryo-boychashma.jpg",
+                            "details": "Sirdaryo daryosidagi mashhur pichoq. Daryo oqimi juda tez. Rafting va tabiat sayohatlari uchun ideal joy.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+                        }, {
+                            "name": "Guliston",
+                            "icon": "fas fa-tractor",
+                            "description": "Sanoat markazi",
+                            "image": "img/sirdaryo-guliston.jpg",
+                            "details": "Sirdaryo viloyatining asosiy sanoat markazi. Kimyo va oziq-ovqat sanoati rivojlangan. Yirik zavod va fabrikalar mavjud.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }]
+                    }, {
+                        "id": "surkhandarya",
+                        "name": "Surxondaryo viloyati",
+                        "type": "region",
+                        "description": "Qizil mevalar va tabiat",
+                        "population": "2.7M aholi",
+                        "image": "img/surkhandarya-region.jpg",
+                        "attractions": [{
+                            "name": "Termez",
+                            "icon": "fas fa-mosque",
+                            "description": "Islom tarix markazi",
+                            "image": "img/surkhandarya-termez.jpg",
+                            "details": "O'zbekistonning eng janubiy shahri. Qadimgi Termez 2500 yillik tarixga ega. Islom dinining tarqalishida muhim rol o'ynagan.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+                        }, {
+                            "name": "Sherobod",
+                            "icon": "fas fa-mountain",
+                            "description": "Tabiat manzarasi",
+                            "image": "img/surkhandarya-sherobod.jpg",
+                            "details": "Surxondaryo viloyatining eng go'zal tog'li hududi. Tog'lar, daryolar va go'zal tabiat manzaralari. Ekologik turizm markazi.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }, {
+                            "name": "Boysun",
+                            "icon": "fas fa-leaf",
+                            "description": "Daraxtlar hududi",
+                            "image": "img/surkhandarya-boysun.jpg",
+                            "details": "Surxondaryo viloyatining noyob hududi. Ko'plab noyob daraxtlar va o'simliklar o'sadi. Tabiat qo'riqlanadigan hudud.",
+                            "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: 5,000 so'm"
+                        }]
+                    }, {
+                        "id": "tashkent-region",
+                        "name": "Toshkent viloyati",
+                        "type": "region",
+                        "description": "Poytaxt atrofidagi tabiat",
+                        "population": "2.9M aholi",
+                        "image": "img/tashkent-city.jpg",
+                        "attractions": [{
+                            "name": "Chotqol",
+                            "icon": "fas fa-mountain",
+                            "description": "Tog' manzarasi",
+                            "image": "img/tashkent-chotqol.jpg",
+                            "details": "Toshkent viloyatining eng chiroyli tog'li hududi. Charvak suv ombori joylashgan. Tog'chi sayohat va ekologik turizm uchun mashhur.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+                        }, {
+                            "name": "Buka",
+                            "icon": "fas fa-water",
+                            "description": "Chashma manzarasi",
+                            "image": "img/tashkent-buka.jpg",
+                            "details": "Toshkent viloyatining go'zal chashmasi. Toza tog' suvi va tabiat manzaralari. Dam olish va piknik uchun ideal joy.",
+                            "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+                        }, {
+                            "name": "Bekobod",
+                            "icon": "fas fa-industry",
+                            "description": "Sanoat markazi",
+                            "image": "img/tashkent-bekobod.jpg",
+                            "details": "Toshkent viloyatining yirik sanoat markazi. Kimyo va metallurgiya sanoati rivojlangan. 1940 yildan beri faoliyat yuritadi.",
+                            "visitInfo": "Tashrif buyurish: maxsus ruxsat bilan"
+                        }]
+                    }, {
+                        "id": "samarkand-city",
+                        "name": "Samarqand (Respublika ahamiyati)",
+                        "type": "republic-city",
+                        "description": "Silk Roadning durdonasi - respublika ahamiyatidagi shahar",
+                        "population": "550K aholi",
+                        "image": "img/samarkand-city.jpg",
+                        "attractions": [{
+                            "name": "Registon maydoni",
+                            "icon": "fas fa-monument",
+                            "description": "UNESCO World Heritage",
+                            "image": "img/samarkand-registan.jpg",
+                            "details": "Samarqandning eng mashhur maydoni. Uchta tarixiy madrasa joylashgan bu yer Silk Roadning markazi bo'lgan va UNESCO World Heritage site hisoblanadi.",
+                            "visitInfo": "Ish vaqti: 08:00-20:00 | Kirish narxi: 20,000 so'm"
+                        }, {
+                            "name": "Gur-i Amir",
+                            "icon": "fas fa-tomb",
+                            "description": "Amir Temur maqbarasi",
+                            "image": "img/samarkand-gur-amir.webp",
+                            "details": "Amir Temur va uning oilasining maqbarasi. 1404-1406 yillar orasida qurilgan bu maqbaraga 45 ta davlatdan ziyolilar dafn etilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-19:00 | Kirish narxi: 15,000 so'm"
+                        }, {
+                            "name": "Bibi-Xonim masjidi",
+                            "icon": "fas fa-mosque",
+                            "description": "Tarixiy namozgoh",
+                            "image": "img/samarkand-bibi.jpg",
+                            "details": "Samarqandning eng katta masjidi. 1404 yilda Amir Temur tomonidan qurilgan. Mashhur 'Ko'z xonim' nomi bilan ham tanilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+                        }, {
+                            "name": "Shohi Zinda",
+                            "icon": "fas fa-crown",
+                            "description": "Qadimgi maqbara majmuasi",
+                            "image": "img/samarkand_shohi_zinda_8.jpg",
+                            "details": "Samarqandning eng chiroyli maqbara majmuasi. 11-15 asrlar orasida qurilgan. Rang-bargli kafelar va naqshlar bilan bezatilgan.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 12,000 so'm"
+                        }, {
+                            "name": "Ulug'bek rasadxonasi",
+                            "icon": "fas fa-telescope",
+                            "description": "Ilmiy meros",
+                            "image": "img/samarkand_ulugbek_8.jpg",
+                            "details": "Ulug'bek rasadxonasi - 15-asrdagi buyuk astronomiya inshooti. Ulug'bek tomonidan qurilgan.",
+                            "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 8,000 so'm"
+                        }]
+                    }, {
+                        "id": "xorazm",
+                        "name": "Xorazm viloyati",
+                        "type": "region",
+                        "description": "Qadimgi madaniyat markazi",
+                        "population": "1.8M aholi",
+                        "image": "img/khorezm-region.jpg",
+                        "attractions": [{
+                            "name": "Urganch",
+                            "icon": "fas fa-city",
+                            "description": "Viloyat markazi",
+                            "image": "img/urganch_city_6.jpg",
+                            "details": "Xorazm viloyatining poytaxti. Qadimgi Ur va Urganch shahrining davomi. Ichan Qalaga yaqin joylashgan.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Toproq qal'a",
+                            "icon": "fas fa-castle",
+                            "description": "Tarixiy qal'a",
+                            "image": "img/toprak_kala_1.jpg",
+                            "details": "Xorazm viloyatining eng qadimgi qal'alaridan biri. 1-asrda qurilgan. O'zbekistondagi eng yirik arxeologik yodgorlik.",
+                            "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 15,000 so'm"
+                        }, {
+                            "name": "Ichan Qala yaqinida",
+                            "icon": "fas fa-monument",
+                            "description": "Madaniy meros",
+                            "image": "img/urganch-ichan-qala.jpg",
+                            "details": "Urganch Ichan Qalasi - Xorazm viloyatining UNESCO World Heritage site. Xiva kabi muhim tarixiy yodgorlik.",
+                            "visitInfo": "Ish vaqti: 09:00-19:00 | Kirish narxi: 20,000 so'm"
+                        }, {
+                            "name": "Qo'shko'pir",
+                            "icon": "fas fa-water",
+                            "description": "Amudaryo bo'yida",
+                            "image": "img/qushkupir_9.jpg",
+                            "details": "Xorazm viloyatining shimoli-sharqiy qismidagi shahar. Amudaryo bo'yida joylashgan. Baliq ovlash va qishloq xo'jaligi markazi.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }, {
+                            "name": "Nukus (Qoraqalpog'iston bilan)",
+                            "icon": "fas fa-handshake",
+                            "description": "Ikki viloyat chegarasi",
+                            "image": "img/nukus-border.jpg",
+                            "details": "Xorazm va Qoraqalpog'iston viloyatlari o'rtasidagi chegaraviy hudud. Iqtisodiy hamkorlik markazi.",
+                            "visitInfo": "Tashrif buyurish: erkin"
+                        }]
+                    }]
+                }
+            </script>
+        </div>
+    </section>
+
+    <!-- Tourism Types Section -->
+    <section id="tourism" class="tourism-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sayohat Turlari</h2>
+                <p>Har bir qiziqish uchun maxsus sayohat yo'nalishlari</p>
+            </div>
+            <div class="tourism-grid">
+                <div class="tourism-card">
+                    <div class="tourism-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3>Madaniy Sayohat</h3>
+                    <p>Tarixiy yodgorliklar va madaniy merosni o'rganish</p>
+                    <ul>
+                        <li>UNESCO World Heritage</li>
+                        <li>Islom me'morchiligi</li>
+                        <li>Madaniy tadbirlar</li>
+                    </ul>
+                    <a href="#" class="tourism-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="tourism-card">
+                    <div class="tourism-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Tabiat Sayohati</h3>
+                    <p>Toshon va Chotqol tog'laridagi go'zallik</p>
+                    <ul>
+                        <li>Mountain trekking</li>
+                        <li>Ecotourism</li>
+                        <li>Adventure sports</li>
+                    </ul>
+                    <a href="#" class="tourism-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="tourism-card">
+                    <div class="tourism-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Gastronomik Sayohat</h3>
+                    <p>O'zbek milliy taomlari va pishiriqlari</p>
+                    <ul>
+                        <li>Osh va plov</li>
+                        <li>Non va somsa</li>
+                        <li>Milliy shirinliklar</li>
+                    </ul>
+                    <a href="#" class="tourism-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="tourism-card">
+                    <div class="tourism-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Wellness Sayohat</h3>
+                    <p>Sog'liq va dam olish markazlari</p>
+                    <ul>
+                        <li>Spa va wellness</li>
+                        <li>Yog'a va meditatsiya</li>
+                        <li>Tabiat bilan uchrashuv</li>
+                    </ul>
+                    <a href="#" class="tourism-link">Batafsil <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section id="heritage" class="heritage">
+        <div class="container">
+            <div class="section-header">
+                <h2>O'zbekiston Madaniy Merosi</h2>
+                <p>Dunyo madaniyatining ajralmas qismi</p>
+            </div>
+            <div class="heritage-content">
+                <div class="heritage-timeline">
+                    <div class="timeline-item" data-year="7th century">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Islomning Kirishi</h4>
+                            <p>Arablar O'zbekistonga kelib, islom dinini olib kelishdi</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-year="14th century">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Amir Temur davri</h4>
+                            <p>Buyuk me'morchilik va madaniyat gullab-yashnash davri</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-year="16th century">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Uyg'onish davri</h4>
+                            <p>Ilm-fan va san'atning rivojlanishi</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-year="21st century">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Zamonaviy rivojlanish</h4>
+                            <p>Texnologiyalar va madaniyatning uyg'unligi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heritage-stats">
+                    <div class="heritage-stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>UNESCO World Heritage</p>
+                        </div>
+                    </div>
+
+                    <div class="heritage-stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1000+</h3>
+                            <p>Tarixiy yodgorliklar</p>
+                        </div>
+                    </div>
+
+                    <div class="heritage-stat">
+                        <div class="stat-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>200+</h3>
+                            <p>Milliy hunarmandlar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interaktiv Galeriya</h2>
+                <p>O'zbekiston go'zalligini ko'rish</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Barchasi</button>
+                <button class="filter-btn" data-filter="cities">Shaharlar</button>
+                <button class="filter-btn" data-filter="nature">Tabiat</button>
+                <button class="filter-btn" data-filter="culture">Madaniyat</button>
+                <button class="filter-btn" data-filter="food">Taomlar</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="cities">
+                    <img src="img/gallery-tashkent.jpg" alt="Toshkent" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Toshkent City</h4>
+                            <p>Zamonaviy poytaxt</p>
+                        </div>
+                        <button class="gallery-zoom" data-image="img/gallery-tashkent.jpg">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cities">
+                    <img src="img/gallery-samarkand.jpg" alt="Samarqand" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Registan Square</h4>
+                            <p>Samarqand merosi</p>
+                        </div>
+                        <button class="gallery-zoom" data-image="img/gallery-samarkand.jpg">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="nature">
+                    <img src="img/gallery-nature.jpg" alt="Tabiat" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Mountain View</h4>
+                            <p>Chotqol tog'lari</p>
+                        </div>
+                        <button class="gallery-zoom" data-image="img/gallery-nature.jpg">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="culture">
+                    <img src="img/gallery-crafts.jpg" alt="Hunarmandlik" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Traditional Crafts</h4>
+                            <p>Milliy hunarmandlar</p>
+                        </div>
+                        <button class="gallery-zoom" data-image="img/gallery-crafts.jpg">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="food">
+                    <img src="img/gallery-food.jpg" alt="Taomlar" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Uzbek Cuisine</h4>
+                            <p>Milliy taomlar</p>
+                        </div>
+                        <button class="gallery-zoom" data-image="img/gallery-food.jpg">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cities">
+                    <img src="img/gallery-mosque.jpg" alt="Mosque" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Islamic Architecture</h4>
+                            <p>Diniy me'morchilik</p>
+                        </div>
+                        <button class="gallery-zoom" data-image="img/gallery-mosque.jpg">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bizning Xizmatlarimiz</h2>
+                <p>Sayohatingizni eng yaxshi qilish uchun</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Sayohat Rejalari</h3>
+                    <p>Shaxsiylashtirilgan sayohat itinerariylari</p>
+                    <ul>
+                        <li>Individual turlar</li>
+                        <li>Guruh sayohatlari</li>
+                        <li>Luxury packages</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Mehmonxona Bronlash</h3>
+                    <p>Eng yaxshi mehmonxonalarda bron qilish</p>
+                    <ul>
+                        <li>5-star hotels</li>
+                        <li>Traditional guesthouses</li>
+                        <li>Budget options</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Transport Xizmatlari</h3>
+                    <p>Xavfsiz va qulay transport</p>
+                    <ul>
+                        <li>Private drivers</li>
+                        <li>Airport transfers</li>
+                        <li>Group transportation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Gid Xizmatlari</h3>
+                    <p>Professional va tajribali gidlar</p>
+                    <ul>
+                        <li>Multi-language guides</li>
+                        <li>Historical tours</li>
+                        <li>Cultural experiences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Biz bilan Bog'laning</h2>
+                <p>Sayohat rejangizni rejalashda yordam beramiz</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Manzil</h4>
+                            <p>Toshkent sh., Amir Temur ko'chasi, 123-uy</p>
+                            istantan
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p>+998 71 200 00 88</p>
+                            <p>Ish vaqti: 09:00-18:00 (Dushanba-Juma)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@uzbekistantravel.uz</p>
+                            <p>support@uzbekistantravel.uz</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Ismingiz</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email manzilingiz</label>
+                    </div>
+
+                    <div class="form-group">
+                        <select id="tourism-type" name="tourism-type" required>
+                            <option value="">Sayohat turini tanlang</option>
+                            <option value="cultural">Madaniy sayohat</option>
+                            <option value="nature">Tabiat sayohati</option>
+                            <option value="gastronomic">Gastronomik sayohat</option>
+                            <option value="wellness">Wellness sayohat</option>
+                            <option value="mixed">Aralash sayohat</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="date" id="travel-date" name="travel-date">
+                        <label for="travel-date">Sayohat sanasi</label>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Xabaringiz</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Yuborish
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg" alt="O'zbekiston Sayohat">
+                        <span>O'zbekiston Sayohat</span>
+                    </div>
+                    <p>O'zbekistonning boy madaniyatini dunyoga namoyish qiluvchi rasmiy sayohat portal.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Tezkor Havolalar</h4>
+                    <ul>
+                        <li><a href="#cities">Shaharlar</a></li>
+                        <li><a href="#tourism">Sayohat turlari</a></li>
+                        <li><a href="#heritage">Madaniy meros</a></li>
+                        <li><a href="#gallery">Galeriya</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Sayohat Xizmatlari</h4>
+                    <ul>
+                        <li><a href="#services">Sayohat rejalar</a></li>
+                        <li><a href="#services">Mehmonxona bronlash</a></li>
+                        <li><a href="#services">Transport xizmatlari</a></li>
+                        <li><a href="#services">Gid xizmatlari</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Bog'lanish</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +998 33 104 00 50</li>
+                        <li><i class="fas fa-envelope"></i> info@uzbekistantravel.uz</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Buxoro, O'zbekiston</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 O'zbekiston Sayohat. Barcha huquqlar himoyalangan.</p>
+                <div class="footer-links">
+                    <a href="#">Maxfiylik siyosati</a>
+                    <a href="#">Foydalanish shartlari</a>
+                    <a href="#">Sayt xaritasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-image">
+            <button class="lightbox-close" id="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
