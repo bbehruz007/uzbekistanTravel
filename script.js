@@ -1,11 +1,8 @@
-// DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functions
     initNavigation();
     initScrollAnimations();
     initScrollToTop();
     initSmoothScrolling();
-    initGallery();
     initContactForm();
     initHeroAnimations();
     initLanguageSelector();
@@ -13,187 +10,186 @@ document.addEventListener('DOMContentLoaded', function() {
     initLightbox();
     initFormValidation();
     initCitiesGrid();
+    loadCitiesData();
 });
 
-// Navigation Functions
-function initNavigation() {
-    const header = document.querySelector('.header');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-    
-    // Active link highlighting
-    const sections = document.querySelectorAll('section[id]');
-    
-    function updateActiveLink() {
-        const scrollPos = window.scrollY + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
+const API_CONFIG = {
+    CITIES_DATA_URL: 'data/uzbekistan-cities.json',
+    FALLBACK_DATA: {
+        cities: [{
+                id: "tashkent",
+                name: "Toshkent",
+                type: "capital",
+                description: "Zamonaviy poytaxt va transport markazi",
+                population: "2.4M aholi",
+                image: "img/tashkent-city.jpg",
+                attractions: [{
+                        name: "Amir Temur maydoni",
+                        icon: "fas fa-crown",
+                        description: "O'zbekistonning markaziy maydoni",
+                        image: "img/tashkent-amir-temur.jpg",
+                        details: "O'zbekiston poytaxtining markaziy maydoni. Bu yerda Amir Temurning haykali joylashgan bo'lib, u O'zbekistonning eng muhim tarixiy joylaridan biridir.",
+                        visitInfo: "Ish vaqti: 24 soat | Kirish: bepul"
+                    },
+                    {
+                        name: "Metro tizimi",
+                        icon: "fas fa-subway",
+                        description: "Zamonaviy metro tizimi",
+                        image: "img/tashkent-metro.jpg",
+                        details: "O'zbekistonning birinchi va Markaziy Osiyodagi eng chiroyli metro tizimi. Har bir bekat o'ziga xos me'morchilik uslubi va bezaklari bilan mashhur.",
+                        visitInfo: "Ish vaqti: 05:30-24:00 | Narx: 1200 so'm"
                     }
-                });
+                ]
+            },
+            {
+                id: "samarkand",
+                name: "Samarqand",
+                type: "republic-city",
+                description: "Silk Roadning durdonasi",
+                population: "550K aholi",
+                image: "img/samarkand-city.jpg",
+                attractions: [{
+                        name: "Registon maydoni",
+                        icon: "fas fa-monument",
+                        description: "Xivolshshash madrasasi",
+                        image: "img/samarkand-registan.jpg",
+                        details: "Samarqandning eng mashhur maydoni. Uchta tarixiy madrasa joylashgan bu yer Silk Roadning markazi bo'lgan va UNESCO World Heritage site hisoblanadi.",
+                        visitInfo: "Ish vaqti: 08:00-20:00 | Kirish narxi: 20,000 so'm"
+                    },
+                    {
+                        name: "Gur-i Amir",
+                        icon: "fas fa-tomb",
+                        description: "Amir Temur maqbarasi",
+                        image: "img/samarkand-gur-amir.webp",
+                        details: "Amir Temur va uning oilasining maqbarasi. 1404-1406 yillar orasida qurilgan bu maqbaraga 45 ta davlatdan ziyolilar dafn etilgan.",
+                        visitInfo: "Ish vaqti: 08:00-19:00 | Kirish narxi: 15,000 so'm"
+                    }
+                ]
+            },
+            {
+                id: "bukhara",
+                name: "Buxoro",
+                type: "city",
+                description: "Islom madaniyatining markazi",
+                population: "1400+ yil tarix",
+                image: "img/bukhara-city.jpg",
+                attractions: [{
+                        name: "Po-i-Kalyon majmuasi",
+                        icon: "fas fa-mosque",
+                        description: "Madrasa va masjid majmuasi",
+                        image: "img/bukhara-kalyon.jpg",
+                        details: "Buxoroning eng mashhur majmuasi. Kalyon minorasi va madrasalar bir joyda joylashgan. 16-asrda qurilgan bu majmua islom me'morchiligining nodir namunasi.",
+                        visitInfo: "Ish vaqti: 08:00-20:00 | Kirish narxi: 25,000 so'm"
+                    },
+                    {
+                        name: "Ark qal'asi",
+                        icon: "fas fa-fort-awesome",
+                        description: "Qadimgi qal'a va saroy",
+                        image: "img/bukhara-ark.jpg",
+                        details: "Buxoroning eng qadimgi arki. Miloddan avvalgi 4-asrdan boshlab qurilgan. Emirlarning rasmiy saroyi va ma'muriy markazi bo'lgan.",
+                        visitInfo: "Ish vaqti: 08:00-18:00 | Kirish narxi: 20,000 so'm"
+                    }
+                ]
+            },
+            {
+                id: "khiva",
+                name: "Xiva",
+                type: "city",
+                description: "Xivadagi ichki shahar merosi",
+                population: "Kunyali shahar",
+                image: "img/khiva-city.webp",
+                attractions: [{
+                    name: "Ichan Qala",
+                    icon: "fas fa-castle",
+                    description: "UNESCO World Heritage",
+                    image: "img/khiva_ichan_qala_3.jpg",
+                    details: "Xivadagi ichki shahar, UNESCO Jahon merosi ro'yxatiga kiritilgan. 2500 yillik tarixga ega bo'lgan bu qal'a ichida 50 dan ortiq tarixiy yodgorliklar mavjud.",
+                    visitInfo: "Ish vaqti: 09:00-20:00 | Kirish narxi: 30,000 so'm"
+                }]
+            },
+            {
+                id: "fergana-region",
+                name: "Farg'ona viloyati",
+                type: "region",
+                description: "Chashma va baliq yerlari",
+                population: "3.7M aholi",
+                image: "img/fergana-valley.jpg",
+                attractions: [{
+                        name: "Farg'ona",
+                        icon: "fas fa-city",
+                        description: "Viloyat markazi",
+                        image: "img/fergana_city_6.jpg",
+                        details: "Farg'ona viloyatining poytaxti. O'zbekistoning markaziy qismidagi yirik shahar. Iqtisodiy markaz.",
+                        visitInfo: "Tashrif buyurish: erkin"
+                    },
+                    {
+                        name: "Rishtan",
+                        icon: "fas fa-vase",
+                        description: "Milliy sopol hunarmandligi",
+                        image: "img/fergana-rishtan.jpg",
+                        details: "O'zbekistonning mashhur sopol markazi. 8-asrlardan boshlab rishtan sopollari butun Osiyoga mashhur. Rang-bargli naqshlar va noyob ranglar bilan mashhur.",
+                        visitInfo: "Ish vaqti: 08:00-18:00 | Kirish narxi: bepul (ustaxonalar)"
+                    }
+                ]
             }
-        });
+        ]
     }
-    
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink(); // Initial call
-}
+};
 
-// Scroll Animations
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.city-card, .tourism-card, .service-card, .timeline-item, .heritage-stat, .gallery-item');
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        observer.observe(el);
-    });
-}
+async function loadCitiesData() {
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const citiesGrid = document.getElementById('citiesGrid');
 
-// Scroll to Top Button
-function initScrollToTop() {
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    
-    if (scrollToTopBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 500) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
+    try {
+        loadingIndicator.style.display = 'flex';
+
+        let citiesData = null;
+        try {
+            const response = await fetch(API_CONFIG.CITIES_DATA_URL);
+            if (response.ok) {
+                citiesData = await response.json();
             }
-        });
-        
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        } catch (error) {
+            console.log('External API not available, using fallback data');
+        }
+
+        if (!citiesData) {
+            citiesData = API_CONFIG.FALLBACK_DATA;
+        }
+
+        // Initialize cities grid with data
+        initCitiesGrid(citiesData);
+
+        // Hide loading indicator
+        setTimeout(() => {
+            loadingIndicator.style.display = 'none';
+        }, 1000);
+
+    } catch (error) {
+        console.error('Error loading cities data:', error);
+        showNotification('Ma\'lumotlarni yuklashda xatolik yuz berdi', 'error');
+        loadingIndicator.style.display = 'none';
     }
-}
-
-// Smooth Scrolling
-function initSmoothScrolling() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                const navMenu = document.querySelector('.nav-menu');
-                const hamburger = document.querySelector('.hamburger');
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            }
-        });
-    });
-}
-
-// Gallery Functions
-function initGallery() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const filterValue = this.getAttribute('data-filter');
-            
-            galleryItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 100);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-    
-    // Set initial styles
-    galleryItems.forEach(item => {
-        item.style.opacity = '1';
-        item.style.transform = 'scale(1)';
-        item.style.display = 'block';
-        item.style.transition = 'all 0.3s ease';
-    });
 }
 
 // Cities Grid Initialization
-function initCitiesGrid() {
-    const citiesData = document.getElementById('citiesData');
-    if (!citiesData) return;
-    
-    const cities = JSON.parse(citiesData.textContent).cities;
+function initCitiesGrid(data = null) {
+    const citiesData = data || API_CONFIG.FALLBACK_DATA;
     const citiesGrid = document.getElementById('citiesGrid');
-    
+
+    if (!citiesGrid) return;
+
     // Render cities
-    renderCities(cities, 'all');
-    
+    renderCities(citiesData.cities, 'all');
+
     // Initialize filters
-    initCityFilters(cities);
+    initCityFilters(citiesData.cities);
 }
 
 function renderCities(cities, filter = 'all') {
     const citiesGrid = document.getElementById('citiesGrid');
     if (!citiesGrid) return;
-    
+
     const filteredCities = cities.filter(city => {
         if (filter === 'all') return true;
         if (filter === 'republic') return city.type === 'republic';
@@ -203,9 +199,9 @@ function renderCities(cities, filter = 'all') {
         if (filter === 'region') return city.type === 'region';
         return city.type === filter;
     });
-    
+
     citiesGrid.innerHTML = '';
-    
+
     filteredCities.forEach(city => {
         const cityCard = createCityCard(city);
         citiesGrid.appendChild(cityCard);
@@ -217,15 +213,15 @@ function createCityCard(city) {
     card.className = `city-card ${city.type}`;
     card.setAttribute('data-city', city.id);
     card.setAttribute('data-type', city.type);
-    
-    const attractions = city.attractions.map(attraction => 
+
+    const attractions = city.attractions.slice(0, 2).map(attraction =>
         `<div class="attraction-item">
             <i class="${attraction.icon}"></i>
             <span>${attraction.name}</span>
             <small>${attraction.description}</small>
         </div>`
     ).join('');
-    
+
     card.innerHTML = `
         <div class="city-image">
             <img src="${city.image}" alt="${city.name}" loading="lazy">
@@ -246,25 +242,22 @@ function createCityCard(city) {
             </div>
         </div>
     `;
-    
-    // Add click event
+
     card.addEventListener('click', () => {
         showCityDetails(city);
     });
-    
+
     return card;
 }
 
 function initCityFilters(cities) {
     const filterBtns = document.querySelectorAll('.region-filters .filter-btn');
-    
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active class from all buttons
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
             this.classList.add('active');
-            
+
             const filter = this.getAttribute('data-filter');
             renderCities(cities, filter);
         });
@@ -272,7 +265,6 @@ function initCityFilters(cities) {
 }
 
 function showCityDetails(city) {
-    // Create modal or detailed view
     const modal = document.createElement('div');
     modal.className = 'city-modal';
     modal.innerHTML = `
@@ -315,7 +307,6 @@ function showCityDetails(city) {
         </div>
     `;
     
-    // Add styles
     modal.style.cssText = `
         position: fixed;
         top: 0;
@@ -334,13 +325,11 @@ function showCityDetails(city) {
     
     document.body.appendChild(modal);
     
-    // Show modal
     setTimeout(() => {
         modal.style.opacity = '1';
         modal.style.visibility = 'visible';
     }, 10);
     
-    // Close functionality
     const closeBtn = modal.querySelector('.city-modal-close');
     closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
@@ -353,7 +342,6 @@ function showCityDetails(city) {
         setTimeout(() => modal.remove(), 300);
     }
     
-    // ESC key to close
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeModal();
@@ -361,7 +349,117 @@ function showCityDetails(city) {
     });
 }
 
-// Contact Form
+function initNavigation() {
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+
+    function updateActiveLink() {
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink(); 
+}
+
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.city-card, .tourism-card, .service-card, .timeline-item, .heritage-stat, .gallery-item');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        observer.observe(el);
+    });
+}
+
+function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+function initSmoothScrolling() {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight - 20;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                const navMenu = document.querySelector('.nav-menu');
+                const hamburger = document.querySelector('.hamburger');
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            }
+        });
+    });
+}
+
 function initContactForm() {
     const form = document.querySelector('.contact-form');
     
@@ -369,25 +467,19 @@ function initContactForm() {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
             
-            // Show loading state
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuborilmoqda...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual API call)
             setTimeout(() => {
-                // Show success message
                 showNotification('Xabaringiz muvaffaqiyatli yuborildi! Tez orada sizga javob beramiz.', 'success');
                 
-                // Reset form
                 form.reset();
                 
-                // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }, 2000);
@@ -395,13 +487,10 @@ function initContactForm() {
     }
 }
 
-// Hero Animations
 function initHeroAnimations() {
-    // Floating cards animation
     const floatingCards = document.querySelectorAll('.floating-card');
     
     floatingCards.forEach((card, index) => {
-        // Add random animation delay
         const delay = Math.random() * 2;
         card.style.animationDelay = `${delay}s`;
     });
@@ -440,7 +529,6 @@ function initHeroAnimations() {
                     clearInterval(timer);
                 }
                 
-                // Format number with proper suffix
                 let displayValue = Math.floor(current);
                 if (stat.textContent.includes('K')) {
                     displayValue += 'K';
@@ -454,7 +542,6 @@ function initHeroAnimations() {
     }
 }
 
-// Language Selector
 function initLanguageSelector() {
     const languageSelect = document.getElementById('language');
     
@@ -462,17 +549,13 @@ function initLanguageSelector() {
         languageSelect.addEventListener('change', function() {
             const selectedLang = this.value;
             
-            // Store language preference
             localStorage.setItem('preferredLanguage', selectedLang);
             
-            // Update page language (you can implement actual translation here)
             document.documentElement.lang = selectedLang;
             
-            // Show notification
             showNotification(`Til ${selectedLang === 'uz' ? 'O\'zbek' : selectedLang === 'ru' ? 'Rus' : 'Ingliz'} ga o\'zgartirildi`, 'info');
         });
         
-        // Load saved language preference
         const savedLanguage = localStorage.getItem('preferredLanguage');
         if (savedLanguage) {
             languageSelect.value = savedLanguage;
@@ -481,7 +564,6 @@ function initLanguageSelector() {
     }
 }
 
-// Mobile Menu
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -492,7 +574,6 @@ function initMobileMenu() {
             navMenu.classList.toggle('active');
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -500,7 +581,6 @@ function initMobileMenu() {
             }
         });
         
-        // Close menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 hamburger.classList.remove('active');
@@ -510,7 +590,6 @@ function initMobileMenu() {
     }
 }
 
-// Lightbox
 function initLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
@@ -518,7 +597,6 @@ function initLightbox() {
     const zoomButtons = document.querySelectorAll('.gallery-zoom');
     
     if (lightbox && lightboxImage && lightboxClose) {
-        // Open lightbox
         zoomButtons.forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
@@ -529,7 +607,6 @@ function initLightbox() {
             });
         });
         
-        // Close lightbox
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
@@ -542,7 +619,6 @@ function initLightbox() {
             }
         });
         
-        // Close on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                 closeLightbox();
@@ -551,7 +627,6 @@ function initLightbox() {
     }
 }
 
-// Form Validation
 function initFormValidation() {
     const forms = document.querySelectorAll('form');
     
@@ -577,13 +652,11 @@ function validateField(field) {
     let isValid = true;
     let errorMessage = '';
     
-    // Required field validation
     if (required && !value) {
         isValid = false;
         errorMessage = 'Bu maydon to\'ldirilishi kerak';
     }
     
-    // Email validation
     if (type === 'email' && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
@@ -592,7 +665,6 @@ function validateField(field) {
         }
     }
     
-    // Phone validation (if phone type exists)
     if (type === 'tel' && value) {
         const phoneRegex = /^[\+]?[0-9\s\-\(\)]{9,}$/;
         if (!phoneRegex.test(value)) {
@@ -601,7 +673,6 @@ function validateField(field) {
         }
     }
     
-    // Date validation
     if (type === 'date' && value) {
         const selectedDate = new Date(value);
         const today = new Date();
@@ -613,7 +684,6 @@ function validateField(field) {
         }
     }
     
-    // Show/hide error
     if (!isValid) {
         showFieldError(field, errorMessage);
     } else {
@@ -652,13 +722,10 @@ function clearFieldError(field) {
     field.style.borderColor = '';
 }
 
-// Notification System
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notif => notif.remove());
     
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     
@@ -686,7 +753,6 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Add styles
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -702,7 +768,6 @@ function showNotification(message, type = 'info') {
         backdrop-filter: blur(10px);
     `;
     
-    // Add animation styles
     if (!document.querySelector('#notification-styles')) {
         const style = document.createElement('style');
         style.id = 'notification-styles';
@@ -745,17 +810,14 @@ function showNotification(message, type = 'info') {
         document.head.appendChild(style);
     }
     
-    // Add to DOM
     document.body.appendChild(notification);
     
-    // Close button functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
         notification.style.animation = 'slideOutRight 0.3s ease';
         setTimeout(() => notification.remove(), 300);
     });
     
-    // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
             notification.style.animation = 'slideOutRight 0.3s ease';
@@ -764,179 +826,6 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// City Card Interactions
-function initCityCards() {
-    const cityCards = document.querySelectorAll('.city-card');
-    
-    cityCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const cityName = this.querySelector('h3').textContent;
-            showNotification(`${cityName} haqida batafsil ma'lumot tez orada qo'shiladi`, 'info');
-        });
-    });
-}
-
-// Tourism Card Interactions
-function initTourismCards() {
-    const tourismCards = document.querySelectorAll('.tourism-card');
-    
-    tourismCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const tourType = this.querySelector('h3').textContent;
-            showNotification(`${tourType} haqida batafsil ma'lumot tez orada qo'shiladi`, 'info');
-        });
-    });
-}
-
-// Service Card Interactions
-function initServiceCards() {
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    serviceCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const serviceName = this.querySelector('h3').textContent;
-            showNotification(`${serviceName} xizmati haqida batafsil ma'lumot uchun biz bilan bog'laning`, 'info');
-        });
-    });
-}
-
-// Initialize additional card interactions
-initCityCards();
-initTourismCards();
-initServiceCards();
-
-// Social Media Sharing
-function initSocialSharing() {
-    const shareButtons = document.querySelectorAll('[data-share]');
-    
-    shareButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const platform = this.getAttribute('data-share');
-            const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent('O\'zbekiston sayohat saytiga tashrif buyuring!');
-            
-            let shareUrl = '';
-            
-            switch(platform) {
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-                    break;
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                    break;
-            }
-            
-            if (shareUrl) {
-                window.open(shareUrl, '_blank', 'width=600,height=400');
-            }
-        });
-    });
-}
-
-// Initialize social sharing
-initSocialSharing();
-
-// Loading Animation
-function showLoading(element) {
-    element.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuklanmoqda...';
-    element.disabled = true;
-}
-
-function hideLoading(element, originalText) {
-    element.innerHTML = originalText;
-    element.disabled = false;
-}
-
-// Keyboard Navigation
-document.addEventListener('keydown', function(e) {
-    // Handle keyboard shortcuts
-    if (e.ctrlKey || e.metaKey) {
-        switch(e.key) {
-            case 'k':
-                e.preventDefault();
-                // Focus search input if exists
-                const searchInput = document.querySelector('input[type="search"]');
-                if (searchInput) {
-                    searchInput.focus();
-                }
-                break;
-        }
-    }
-});
-
-// Performance Optimization
-function optimizeImages() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-    }
-}
-
-// Initialize image optimization
-optimizeImages();
-
-// Error Handling
-window.addEventListener('error', function(e) {
-    console.error('JavaScript Error:', e.error);
-    // You could send error reports to a logging service here
-});
-
-// Accessibility Improvements
-function initAccessibility() {
-    // Add skip link
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.textContent = 'Asosiy kontentga o\'tish';
-    skipLink.className = 'skip-link';
-    skipLink.style.cssText = `
-        position: absolute;
-        top: -40px;
-        left: 6px;
-        background: var(--primary-color);
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        border-radius: 4px;
-        z-index: 10001;
-        transition: top 0.3s;
-    `;
-    
-    skipLink.addEventListener('focus', function() {
-        this.style.top = '6px';
-    });
-    
-    skipLink.addEventListener('blur', function() {
-        this.style.top = '-40px';
-    });
-    
-    document.body.insertBefore(skipLink, document.body.firstChild);
-    
-    // Add main content landmark
-    const mainContent = document.querySelector('main') || document.querySelector('.hero');
-    if (mainContent && !mainContent.id) {
-        mainContent.id = 'main-content';
-    }
-}
-
-// Initialize accessibility features
-initAccessibility();
-
-// Console welcome message
 console.log('%c🇺🇿 O\'zbekiston Sayohat Veb-sayt', 'color: #009639; font-size: 24px; font-weight: bold;');
 console.log('%cSayt muvaffaqiyatli yuklandi!', 'color: #1e88e5; font-size: 16px;');
 

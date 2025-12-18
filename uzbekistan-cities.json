@@ -1,0 +1,662 @@
+{
+  "cities": [
+    {
+      "id": "tashkent",
+      "name": "Toshkent",
+      "type": "capital",
+      "description": "Zamonaviy poytaxt va transport markazi",
+      "population": "2.4M aholi",
+      "image": "img/tashkent-city.jpg",
+      "attractions": [
+        {
+          "name": "Amir Temur maydoni",
+          "icon": "fas fa-crown",
+          "description": "O'zbekistonning markaziy maydoni",
+          "image": "img/tashkent-amir-temur.jpg",
+          "details": "O'zbekiston poytaxtining markaziy maydoni. Bu yerda Amir Temurning haykali joylashgan bo'lib, u O'zbekistonning eng muhim tarixiy joylaridan biridir.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish: bepul"
+        },
+        {
+          "name": "Metro tizimi",
+          "icon": "fas fa-subway",
+          "description": "Zamonaviy metro tizimi",
+          "image": "img/tashkent-metro.jpg",
+          "details": "O'zbekistonning birinchi va Markaziy Osiyodagi eng chiroyli metro tizimi. Har bir bekat o'ziga xos me'morchilik uslubi va bezaklari bilan mashhur.",
+          "visitInfo": "Ish vaqti: 05:30-24:00 | Narx: 1200 so'm"
+        },
+        {
+          "name": "Televideniye minorasi",
+          "icon": "fas fa-tower-broadcast",
+          "description": "O'zbekistonning yuqori binolari",
+          "image": "img/tashkent-tower.jpg",
+          "details": "Toshkent shahrining eng baland inshooti. Minor 385 metr balandlikda bo'lib, radio va televidenie tarqalish markazi hisoblanadi.",
+          "visitInfo": "Tashrif buyurish imkoniyati: cheklangan"
+        }
+      ]
+    },
+    {
+      "id": "samarkand",
+      "name": "Samarqand",
+      "type": "republic-city",
+      "description": "Silk Roadning durdonasi",
+      "population": "550K aholi",
+      "image": "img/samarkand-city.jpg",
+      "attractions": [
+        {
+          "name": "Registon maydoni",
+          "icon": "fas fa-monument",
+          "description": "Xivolshshash madrasasi",
+          "image": "img/samarkand-registan.jpg",
+          "details": "Samarqandning eng mashhur maydoni. Uchta tarixiy madrasa joylashgan bu yer Silk Roadning markazi bo'lgan va UNESCO World Heritage site hisoblanadi.",
+          "visitInfo": "Ish vaqti: 08:00-20:00 | Kirish narxi: 20,000 so'm"
+        },
+        {
+          "name": "Gur-i Amir",
+          "icon": "fas fa-tomb",
+          "description": "Amir Temur maqbarasi",
+          "image": "img/samarkand-gur-amir.webp",
+          "details": "Amir Temur va uning oilasining maqbarasi. 1404-1406 yillar orasida qurilgan bu maqbaraga 45 ta davlatdan ziyolilar dafn etilgan.",
+          "visitInfo": "Ish vaqti: 08:00-19:00 | Kirish narxi: 15,000 so'm"
+        },
+        {
+          "name": "Bibi-Xonim masjidi",
+          "icon": "fas fa-mosque",
+          "description": "Tarixiy namozgoh",
+          "image": "img/samarkand-bibi.jpg",
+          "details": "Samarqandning eng katta masjidi. 1404 yilda Amir Temur tomonidan qurilgan. Mashhur 'Ko'z xonim' nomi bilan ham tanilgan.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+        },
+        {
+          "name": "Shohi Zinda",
+          "icon": "fas fa-crown",
+          "description": "Qadimgi maqbara majmuasi",
+          "image": "img/samarkand_shohi_zinda_8.jpg",
+          "details": "Samarqandning eng chiroyli maqbara majmuasi. 11-15 asrlar orasida qurilgan. Rang-bargli kafelar va naqshlar bilan bezatilgan.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 12,000 so'm"
+        },
+        {
+          "name": "Ulug'bek rasadxonasi",
+          "icon": "fas fa-telescope",
+          "description": "Ilmiy meros",
+          "image": "img/samarkand_ulugbek_8.jpg",
+          "details": "Ulug'bek rasadxonasi - 15-asrdagi buyuk astronomiya inshooti. Ulug'bek tomonidan qurilgan.",
+          "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 8,000 so'm"
+        }
+      ]
+    },
+    {
+      "id": "bukhara",
+      "name": "Buxoro",
+      "type": "city",
+      "description": "Islom madaniyatining markazi",
+      "population": "1400+ yil tarix",
+      "image": "img/bukhara-city.jpg",
+      "attractions": [
+        {
+          "name": "Po-i-Kalyon majmuasi",
+          "icon": "fas fa-mosque",
+          "description": "Madrasa va masjid majmuasi",
+          "image": "img/bukhara-kalyon.jpg",
+          "details": "Buxoroning eng mashhur majmuasi. Kalyon minorasi va madrasalar bir joyda joylashgan. 16-asrda qurilgan bu majmua islom me'morchiligining nodir namunasi.",
+          "visitInfo": "Ish vaqti: 08:00-20:00 | Kirish narxi: 25,000 so'm"
+        },
+        {
+          "name": "Ark qal'asi",
+          "icon": "fas fa-fort-awesome",
+          "description": "Qadimgi qal'a va saroy",
+          "image": "img/bukhara-ark.jpg",
+          "details": "Buxoroning eng qadimgi arki. Miloddan avvalgi 4-asrdan boshlab qurilgan. Emirlarning rasmiy saroyi va ma'muriy markazi bo'lgan.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 20,000 so'm"
+        },
+        {
+          "name": "Lab-i Xauz",
+          "icon": "fas fa-water",
+          "description": "Tarixiy hovuz va majmua",
+          "image": "img/bukhara-lab-hauz.jpg",
+          "details": "Buxoroning eng chiroyli maydoni. 17-asrda qurilgan hovuz atrofida uchta tarixiy madrasa joylashgan. Kukaldosh madrasasi ham shu yerda.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish bepul"
+        },
+        {
+          "name": "Qorakuqon maqbarasi",
+          "icon": "fas fa-tomb",
+          "description": "Qadimgi maqbara majmuasi",
+          "image": "img/bukhara-qorakuqon.jpg",
+          "details": "Buxoroning eng qadimgi maqbarasi. 10-12 asrlar oralig'ida qurilgan. Bir necha din peshlari va ziyolilarning maqbarasi joylashgan.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 15,000 so'm"
+        }
+      ]
+    },
+    {
+      "id": "khiva",
+      "name": "Xiva",
+      "type": "city",
+      "description": "Xivadagi ichki shahar merosi",
+      "population": "Kunyali shahar",
+      "image": "img/khiva-city.webp",
+      "attractions": [
+        {
+          "name": "Ichan Qala",
+          "icon": "fas fa-castle",
+          "description": "UNESCO World Heritage",
+          "image": "img/khiva_ichan_qala_3.jpg",
+          "details": "Xivadagi ichki shahar, UNESCO Jahon merosi ro'yxatiga kiritilgan. 2500 yillik tarixga ega bo'lgan bu qal'a ichida 50 dan ortiq tarixiy yodgorliklar mavjud.",
+          "visitInfo": "Ish vaqti: 09:00-20:00 | Kirish narxi: 30,000 so'm"
+        },
+        {
+          "name": "Qo'ja minarasi",
+          "icon": "fas fa-tower-broadcast",
+          "description": "Yuqori minora",
+          "image": "img/khiva_qoja_minora_5.jpg",
+          "details": "Xivadagi eng mashhur minora. 1852-1853 yillarda qurilgan. 26 metr balandlikda bo'lib, 'qora minora' deb ham ataladi.",
+          "visitInfo": "Ish vaqti: 09:00-19:00 | Kirish narxi: 15,000 so'm"
+        },
+        {
+          "name": "Ichan Qala devori",
+          "icon": "fas fa-shield-alt",
+          "description": "Qal'a devorlari",
+          "image": "img/khiva_wall_8.jpg",
+          "details": "Xivaning himoyalovchi devorlari. 4 km uzunlikdagi devor va 4 ta darvoza mavjud. 10-asrlardan boshlab qurila boshlangan.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish bepul"
+        }
+      ]
+    },
+    {
+      "id": "fergana-region",
+      "name": "Farg'ona viloyati",
+      "type": "region",
+      "description": "Chashma va baliq yerlari",
+      "population": "3.7M aholi",
+      "image": "img/fergana-valley.jpg",
+      "attractions": [
+        {
+          "name": "Farg'ona",
+          "icon": "fas fa-city",
+          "description": "Viloyat markazi",
+          "image": "img/fergana_city_6.jpg",
+          "details": "Farg'ona viloyatining poytaxti. O'zbekistoning markaziy qismidagi yirik shahar. Iqtisodiy markaz.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Rishtan",
+          "icon": "fas fa-vase",
+          "description": "Milliy sopol hunarmandligi",
+          "image": "img/fergana-rishtan.jpg",
+          "details": "O'zbekistonning mashhur sopol markazi. 8-asrlardan boshlab rishtan sopollari butun Osiyoga mashhur. Rang-bargli naqshlar va noyob ranglar bilan mashhur.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: bepul (ustaxonalar)"
+        },
+        {
+          "name": "Quva",
+          "icon": "fas fa-industry",
+          "description": "Neft va gaz hududi",
+          "image": "img/fergana-quva.png",
+          "details": "Farg'ona vodiysining muhim sanoat markazi. Neft, gaz va kimyo sanoati rivojlangan. Qadimgi Quva shahri 14-asrdan mavjud.",
+          "visitInfo": "Tashrif buyurish: avval ruxsat olish kerak"
+        },
+        {
+          "name": "Qo'stanov",
+          "icon": "fas fa-tree",
+          "description": "Bog'dorchilik markazi",
+          "image": "img/fergana-qo-stanov.png",
+          "details": "Farg'ona vodiysining bog'dorchilik markazi. Olma, nok, uzum va shaftoli yetishtirish bilan mashhur. Go'zal tabiat va tog'li manzaralar.",
+          "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: 5,000 so'm"
+        },
+        {
+          "name": "Ozbekiston tumani",
+          "icon": "fas fa-map",
+          "description": "Ma'muriy tuman",
+          "image": "img/uzbekiston_district_1.png",
+          "details": "Farg'ona viloyatining yirik tumanlardan biri. Qishloq xo'jaligi va sanoat rivojlangan.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Rishtan tumani",
+          "icon": "fas fa-palette",
+          "description": "Sopol ustaxonalari",
+          "image": "img/rishtan_district_6.jpg",
+          "details": "Rishtan sopol san'atining markazi. 200+ ustaxona faoliyat yuritadi. Dunyo bo'ylab taniqli.",
+          "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul"
+        }
+      ]
+    },
+    {
+      "id": "andijan",
+      "name": "Andijon",
+      "type": "city",
+      "description": "Madaniyat va ma'rifat markazi",
+      "population": "1.2M aholi",
+      "image": "img/andijan.jpg",
+      "attractions": [
+        {
+          "name": "Bobur bog'i",
+          "icon": "fas fa-leaf",
+          "description": "Zahiriddin Bobur hajviyotari",
+          "image": "img/andijan-babur.jpg",
+          "details": "Zahiriddin Boburning tavallud topgan joyida qurilgan maqbara va bog'. Bobur Hindistonda Boburiylar imperiyasining asoschisi.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+        },
+        {
+          "name": "Jalaliddin Manguberdi maqbarasi",
+          "icon": "fas fa-tomb",
+          "description": "Tarixiy shaxs maqbarasi",
+          "image": "img/andijan-manguberdi.jpg",
+          "details": "Mongollar davrida yashagan qahramon Jalaliddin Manguberdi maqbarasi. Afg'oniston va O'zbekiston bo'ylab ozodlik kurashi olib borgan.",
+          "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 5,000 so'm"
+        },
+        {
+          "name": "Andijon me'morchiligi",
+          "icon": "fas fa-building",
+          "description": "Zamonaviy me'morchilik",
+          "image": "img/andijan.jpg",
+          "details": "Andijon shahrining zamonaviy me'morchiligi. Yangi bino va inshootlar qurilishi faol davom etmoqda. Arxitektura namunasi sifatida ko'rsatiladi.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        }
+      ]
+    },
+    {
+      "id": "bukhara-region",
+      "name": "Buxoro viloyati",
+      "type": "region",
+      "description": "Madaniyat va tarix markazi",
+      "population": "2.1M aholi",
+      "image": "img/bukhara-city.jpg",
+      "attractions": [
+        {
+          "name": "Buxoro",
+          "icon": "fas fa-city",
+          "description": "Viloyat markazi",
+          "image": "img/bukhara-city.jpg",
+          "details": "Buxoro viloyatining poytaxti. 2500 yillik tarixga ega. Islom madaniyatining markazi.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "G'ijduvon",
+          "icon": "fas fa-palette",
+          "description": "Hunarmandlik markazi",
+          "image": "img/bukhara-gijduvan.jpg",
+          "details": "Buxoro viloyatining hunarmandlik markazi. 12-asrlardan boshlab matolar va kashtalar tayyorlash bilan mashhur. UNESCO Intangible Heritage.",
+          "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul (ustaxonalar)"
+        },
+        {
+          "name": "Qorakuqon",
+          "icon": "fas fa-monument",
+          "description": "Tarixiy yodgorlik",
+          "image": "img/bukhara-qorakuqon.jpg",
+          "details": "Buxoro viloyatining eng qadimgi maqbarasi. 10-12 asrlar oralig'ida qurilgan. Bir necha olim va din peshlari dafn etilgan.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+        },
+        {
+          "name": "G'ijduvon keramikasi",
+          "icon": "fas fa-vase",
+          "description": "UNESCO meroslari",
+          "image": "img/bukhara-gijduvan.jpg",
+          "details": "Dunyo bo'ylab mashhur G'ijduvon sopollari. Hovur va bezakli naqshlar bilan bezatilgan noyob keramika mahsulotlari tayyorlanadi.",
+          "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul (ustaxonalar)"
+        },
+        {
+          "name": "Qorakuqon tumani",
+          "icon": "fas fa-map",
+          "description": "Ma'muriy tuman",
+          "image": "img/qorakuqon_district_4.jpg",
+          "details": "Buxoro viloyatining muhim tumani. Qishloq xo'jaligi va chorvachilik rivojlangan.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        }
+      ]
+    },
+    {
+      "id": "jizzakh",
+      "name": "Jizzax viloyati",
+      "type": "region",
+      "description": "Maden va qadimgi meroslar",
+      "population": "1.4M aholi",
+      "image": "img/jizzakh-region.jpg",
+      "attractions": [
+        {
+          "name": "Zomin",
+          "icon": "fas fa-mountain",
+          "description": "Tabiat manzarasi",
+          "image": "img/jizzakh-zomin.jpg",
+          "details": "Zomin milliy parki hududidagi go'zal tog'li hudud. To'q qizil toshlar va noyob tabiat manzaralari. Piknik va sayohat uchun mashhur joy.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 5,000 so'm"
+        },
+        {
+          "name": "Sariosiyo",
+          "icon": "fas fa-water",
+          "description": "Suzman qal'asi",
+          "image": "img/jizzakh-sariasiyaq.jpg",
+          "details": "Jizzaxdagi qadimgi suv inshooti. 12-asrda qurilgan bu qal'a suvni to'plash va sug'orish uchun xizmat qilgan.",
+          "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 8,000 so'm"
+        },
+        {
+          "name": "Zomin milliy parki",
+          "icon": "fas fa-tree",
+          "description": "Tabiat va hayotlar",
+          "image": "img/jizzakh-park.jpg",
+          "details": "O'zbekistonning eng yirik milliy parklaridan biri. 26,000 ga maydonni egallaydi. Noyob hayvonlar va o'simliklar yashaydi.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+        }
+      ]
+    },
+    {
+      "id": "namangan",
+      "name": "Namangan viloyati",
+      "type": "region",
+      "description": "Oshxona va matolari",
+      "population": "2.8M aholi",
+      "image": "img/namangan-region.jpg",
+      "attractions": [
+        {
+          "name": "Po'poq",
+          "icon": "fas fa-birthday-cake",
+          "description": "Mahalliy shirinliklar",
+          "image": "img/namangan-popok.jpg",
+          "details": "Namanganning mashhur shirinligi. Mahalliy xonliklar davridan beri tayyorlanadi. Un va shakar asosida tayyorlanadi.",
+          "visitInfo": "Ish vaqti: 07:00-20:00 | Narx: 2,000-5,000 so'm"
+        },
+        {
+          "name": "O'zbekiston banknot fabrikasi",
+          "icon": "fas fa-money-bill-wave",
+          "description": "Iqtisodiy markaz",
+          "image": "img/namangan-bank.jpg",
+          "details": "O'zbekistonning pul tayyorlovchi zavodi. 2018 yildan faoliyat yuritmoqda. O'zbekistonning asosiy banknotlari shu yerda tayyorlanadi.",
+          "visitInfo": "Tashrif buyurish: maxsus ruxsat bilan"
+        },
+        {
+          "name": "Chorvoq",
+          "icon": "fas fa-water",
+          "description": "Tabiat manzarasi",
+          "image": "img/namangan-chorvoq.jpg",
+          "details": "Namangandagi go'zal suv havzasi. Tog'li hududdagi tabiat manzarasi. Dam olish va sayohat uchun mashhur joy.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+        }
+      ]
+    },
+    {
+      "id": "navoiy",
+      "name": "Navoiy viloyati",
+      "type": "region",
+      "description": "Kimyo va maden sanoati",
+      "population": "950K aholi",
+      "image": "img/navoiy-region.jpg",
+      "attractions": [
+        {
+          "name": "Navoiy shahri",
+          "icon": "fas fa-industry",
+          "description": "Zamonaviy sanoat markazi",
+          "image": "img/navoiy-city.jpg",
+          "details": "O'zbekistonning yirik sanoat markazlardan biri. Kimyo va metallurgiya sanoati rivojlangan. Alisher Navoiy sharafiga nomlangan.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Bermuda",
+          "icon": "fas fa-mountain",
+          "description": "Tabiat manzarasi",
+          "image": "img/navoiy-bermuda.jpg",
+          "details": "Navoiy viloyatidagi noyob tabiat manzarasi. Quvnoq qizil toshlar va kanyonlar. Tabiatni sevuvchilar uchun ideal joy.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 8,000 so'm"
+        },
+        {
+          "name": "Karakum",
+          "icon": "fas fa-tree",
+          "description": "Cho'l hududi",
+          "image": "img/navoiy-karakum.jpg",
+          "details": "Dunyo bo'ylab mashhur Karakum cho'lining bir qismi. Quvnoq qumlar va cho'l o'simliklari. Kamel safari uchun mashhur.",
+          "visitInfo": "Safari narxi: 50-100 USD"
+        }
+      ]
+    },
+    {
+      "id": "kashkadarya",
+      "name": "Qashqadaryo viloyati",
+      "type": "region",
+      "description": "Shirin suvlar va yaxmalar",
+      "population": "3.3M aholi",
+      "image": "img/kashkadarya-region.jpg",
+      "attractions": [
+        {
+          "name": "Qarshi",
+          "icon": "fas fa-city",
+          "description": "Viloyat markazi",
+          "image": "img/kashkadarya-karshi.jpg",
+          "details": "Qashqadaryo viloyatining markazi. 14-asrlardan mavjud. Qarshi Nohiyonining poytaxti bo'lgan. Yirik savdo markazi.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Shahrisabz",
+          "icon": "fas fa-crown",
+          "description": "Amir Temur tug'ilgan joyi",
+          "image": "img/kashkadarya-shakhrisabz.jpg",
+          "details": "Amir Temurning tug'ilgan joyi. Ak-Tepe majmuasi va Dorut Tilovat joylashgan. UNESCO World Heritage site hisoblanadi.",
+          "visitInfo": "Ish vaqti: 08:00-19:00 | Kirish narxi: 25,000 so'm"
+        },
+        {
+          "name": "Sariosiyo daryosi",
+          "icon": "fas fa-water",
+          "description": "Tabiat manzarasi",
+          "image": "img/kashkadarya-dam.jpg",
+          "details": "Qashqadaryoning eng chiroyli daryosi. Toza suv va go'zal tabiat manzaralari. Baliq ovlash va tabiat sayohatlari uchun mashhur.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+        }
+      ]
+    },
+    {
+      "id": "samarqand-region",
+      "name": "Samarqand viloyati",
+      "type": "region",
+      "description": "Silk Road meroslari",
+      "population": "3.8M aholi",
+      "image": "img/samarkand-city.jpg",
+      "attractions": [
+        {
+          "name": "Urg'ut",
+          "icon": "fas fa-tree",
+          "description": "Bog'dorchilik markazi",
+          "image": "img/samarkand-urgut.jpg",
+          "details": "Samarqand viloyatining bog'dorchilik markazi. Olma, nok va uzum yetishtirish bilan mashhur. Go'zal tabiat va meva bog'lari.",
+          "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: bepul"
+        },
+        {
+          "name": "Qo'rg'onchiq",
+          "icon": "fas fa-monument",
+          "description": "Tarixiy yodgorlik",
+          "image": "img/samarkand-qurghonchiq.jpg",
+          "details": "Samarqand viloyatidagi qadimgi yodgorlik. 14-15 asrlar orasida qurilgan. Qarshi amirligining muhim yodgorligi.",
+          "visitInfo": "Ish vaqti: 09:00-17:00 | Kirish narxi: 8,000 so'm"
+        },
+        {
+          "name": "O'zbekiston tarixi muzeyi",
+          "icon": "fas fa-landmark",
+          "description": "Madaniyat markazi",
+          "image": "img/samarkand-museum.jpg",
+          "details": "Samarqand viloyatining asosiy tarix muzeyi. 1954 yildan faoliyat yuritadi. 60,000 dan ortiq eksponat mavjud.",
+          "visitInfo": "Ish vaqti: 09:00-18:00 | Kirish narxi: 10,000 so'm"
+        }
+      ]
+    },
+    {
+      "id": "sirdaryo",
+      "name": "Sirdaryo viloyati",
+      "type": "region",
+      "description": "Qishloq xo'jaligi markazi",
+      "population": "800K aholi",
+      "image": "img/sirdaryo-region.jpg",
+      "attractions": [
+        {
+          "name": "G'uzor",
+          "icon": "fas fa-leaf",
+          "description": "Qishloq xo'jaligi",
+          "image": "img/sirdaryo-guzor.jpg",
+          "details": "Sirdaryo viloyatining qishloq xo'jaligi markazi. G'uzor, paxta va bug'doy yetishtirish bilan mashhur. Tabiatning boyligi.",
+          "visitInfo": "Ish vaqti: erkin | Kirish narxi: bepul"
+        },
+        {
+          "name": "Boychashma",
+          "icon": "fas fa-water",
+          "description": "Suzman joylari",
+          "image": "img/sirdaryo-boychashma.jpg",
+          "details": "Sirdaryo daryosidagi mashhur pichoq. Daryo oqimi juda tez. Rafting va tabiat sayohatlari uchun ideal joy.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+        },
+        {
+          "name": "Guliston",
+          "icon": "fas fa-tractor",
+          "description": "Sanoat markazi",
+          "image": "img/sirdaryo-guliston.jpg",
+          "details": "Sirdaryo viloyatining asosiy sanoat markazi. Kimyo va oziq-ovqat sanoati rivojlangan. Yirik zavod va fabrikalar mavjud.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        }
+      ]
+    },
+    {
+      "id": "surkhandarya",
+      "name": "Surxondaryo viloyati",
+      "type": "region",
+      "description": "Qizil mevalar va tabiat",
+      "population": "2.7M aholi",
+      "image": "img/surkhandarya-region.jpg",
+      "attractions": [
+        {
+          "name": "Termez",
+          "icon": "fas fa-mosque",
+          "description": "Islom tarix markazi",
+          "image": "img/surkhandarya-termez.jpg",
+          "details": "O'zbekistonning eng janubiy shahri. Qadimgi Termez 2500 yillik tarixga ega. Islom dinining tarqalishida muhim rol o'ynagan.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+        },
+        {
+          "name": "Sherobod",
+          "icon": "fas fa-mountain",
+          "description": "Tabiat manzarasi",
+          "image": "img/surkhandarya-sherobod.jpg",
+          "details": "Surxondaryo viloyatining eng go'zal tog'li hududi. Tog'lar, daryolar va go'zal tabiat manzaralari. Ekologik turizm markazi.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 10,000 so'm"
+        },
+        {
+          "name": "Boysun",
+          "icon": "fas fa-leaf",
+          "description": "Daraxtlar hududi",
+          "image": "img/surkhandarya-boysun.jpg",
+          "details": "Surxondaryo viloyatining noyob hududi. Ko'plab noyob daraxtlar va o'simliklar o'sadi. Tabiat qo'riqlanadigan hudud.",
+          "visitInfo": "Ish vaqti: 08:00-17:00 | Kirish narxi: 5,000 so'm"
+        }
+      ]
+    },
+    {
+      "id": "tashkent-region",
+      "name": "Toshkent viloyati",
+      "type": "region",
+      "description": "Poytaxt atrofidagi tabiat",
+      "population": "2.9M aholi",
+      "image": "img/tashkent-city.jpg",
+      "attractions": [
+        {
+          "name": "Chotqol",
+          "icon": "fas fa-mountain",
+          "description": "Tog' manzarasi",
+          "image": "img/tashkent-chotqol.jpg",
+          "details": "Toshkent viloyatining eng chiroyli tog'li hududi. Charvak suv ombori joylashgan. Tog'chi sayohat va ekologik turizm uchun mashhur.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+        },
+        {
+          "name": "Buka",
+          "icon": "fas fa-water",
+          "description": "Chashma manzarasi",
+          "image": "img/tashkent-buka.jpg",
+          "details": "Toshkent viloyatining go'zal chashmasi. Toza tog' suvi va tabiat manzaralari. Dam olish va piknik uchun ideal joy.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish narxi: bepul"
+        },
+        {
+          "name": "Bekobod",
+          "icon": "fas fa-industry",
+          "description": "Sanoat markazi",
+          "image": "img/tashkent-bekobod.jpg",
+          "details": "Toshkent viloyatining yirik sanoat markazi. Kimyo va metallurgiya sanoati rivojlangan. 1940 yildan beri faoliyat yuritadi.",
+          "visitInfo": "Tashrif buyurish: maxsus ruxsat bilan"
+        }
+      ]
+    },
+    {
+      "id": "karakalpakstan",
+      "name": "Qoraqalpog'iston Respublikasi",
+      "type": "republic",
+      "description": "O'zbekistonning muxtor respublikasi",
+      "population": "1.9M aholi",
+      "image": "img/karakalpakstan_region_9.jpg",
+      "attractions": [
+        {
+          "name": "Nukus",
+          "icon": "fas fa-city",
+          "description": "Respublika poytaxti",
+          "image": "img/nukus_city_3.jpg",
+          "details": "Qoraqalpog'iston Respublikasining poytaxti. 1932 yildan respublika markazi. Aytlar nomi bilan ham mashhur.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Mizdak qal'a",
+          "icon": "fas fa-castle",
+          "description": "Qadimgi qal'a",
+          "image": "img/mizdaq_kala_8.JPG",
+          "details": "Mizdaq qal'asi - Qoraqalpog'istonning eng mashhur tarixiy yodgorligi. 1-asrda qurilgan.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 15,000 so'm"
+        },
+        {
+          "name": "Aral dengizi",
+          "icon": "fas fa-water",
+          "description": "Tabiat mo'jizasi",
+          "image": "img/aral_sea_0.jpg",
+          "details": "Dunyo bo'ylab mashhur Aral dengizi. Tabiat qayta tiklash loyihasi muvaffaqiyatli amalga oshirilmoqda.",
+          "visitInfo": "Ish vaqti: 24 soat | Kirish bepul"
+        }
+      ]
+    },
+    {
+      "id": "xorazm",
+      "name": "Xorazm viloyati",
+      "type": "region",
+      "description": "Qadimgi madaniyat markazi",
+      "population": "1.8M aholi",
+      "image": "img/khorezm-region.jpg",
+      "attractions": [
+        {
+          "name": "Urganch",
+          "icon": "fas fa-city",
+          "description": "Viloyat markazi",
+          "image": "img/urganch_city_6.jpg",
+          "details": "Xorazm viloyatining poytaxti. Qadimgi Ur va Urganch shahrining davomi. Ichan Qalaga yaqin joylashgan.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Toproq qal'a",
+          "icon": "fas fa-castle",
+          "description": "Tarixiy qal'a",
+          "image": "img/toprak_kala_1.jpg",
+          "details": "Xorazm viloyatining eng qadimgi qal'alaridan biri. 1-asrda qurilgan. O'zbekistondagi eng yirik arxeologik yodgorlik.",
+          "visitInfo": "Ish vaqti: 08:00-18:00 | Kirish narxi: 15,000 so'm"
+        },
+        {
+          "name": "Ichan Qala yaqinida",
+          "icon": "fas fa-monument",
+          "description": "Madaniy meros",
+          "image": "img/urganch-ichan-qala.jpg",
+          "details": "Urganch Ichan Qalasi - Xorazm viloyatining UNESCO World Heritage site. Xiva kabi muhim tarixiy yodgorlik.",
+          "visitInfo": "Ish vaqti: 09:00-19:00 | Kirish narxi: 20,000 so'm"
+        },
+        {
+          "name": "Qo'shko'pir",
+          "icon": "fas fa-water",
+          "description": "Amudaryo bo'yida",
+          "image": "img/qushkupir_9.jpg",
+          "details": "Xorazm viloyatining shimoli-sharqiy qismidagi shahar. Amudaryo bo'yida joylashgan. Baliq ovlash va qishloq xo'jaligi markazi.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        },
+        {
+          "name": "Nukus (Qoraqalpog'iston bilan)",
+          "icon": "fas fa-handshake",
+          "description": "Ikki viloyat chegarasi",
+          "image": "img/nukus-border.jpg",
+          "details": "Xorazm va Qoraqalpog'iston viloyatlari o'rtasidagi chegaraviy hudud. Iqtisodiy hamkorlik markazi.",
+          "visitInfo": "Tashrif buyurish: erkin"
+        }
+      ]
+    }
+  ]
+}

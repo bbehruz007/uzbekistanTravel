@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +39,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header Styles */
 .header {
     position: fixed;
     top: 0;
@@ -164,7 +162,6 @@ body {
     transition: var(--transition);
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     position: relative;
@@ -383,7 +380,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Section Styles */
 section {
     padding: 6rem 0;
 }
@@ -420,7 +416,6 @@ section {
     margin: 0 auto;
 }
 
-/* Cities Section */
 .cities {
     background: var(--bg-light);
 }
@@ -602,7 +597,6 @@ section {
     margin-top: 0.2rem;
 }
 
-/* City Modal */
 .city-modal-content {
     background: var(--bg-white);
     border-radius: var(--border-radius);
@@ -828,7 +822,6 @@ section {
     line-height: 1.6;
 }
 
-/* Tourism Types Section */
 .tourism-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -925,7 +918,6 @@ section {
     color: var(--secondary-color);
 }
 
-/* Heritage Section */
 .heritage {
     background: var(--bg-light);
 }
@@ -1030,7 +1022,6 @@ section {
     font-size: 0.9rem;
 }
 
-/* Gallery Section */
 .gallery-filters {
     display: flex;
     justify-content: center;
@@ -1144,7 +1135,6 @@ section {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Services Section */
 .services {
     background: var(--bg-light);
 }
@@ -1216,7 +1206,6 @@ section {
     font-weight: bold;
 }
 
-/* Contact Section */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1281,7 +1270,6 @@ section {
     box-shadow: 0 5px 15px rgba(0, 150, 57, 0.4);
 }
 
-/* Contact Form */
 .contact-form {
     background: var(--bg-light);
     padding: 2.5rem;
@@ -1325,11 +1313,11 @@ section {
     padding: 0 8px;
 }
 
-.form-group input:focus + label,
-.form-group input:valid + label,
-.form-group textarea:focus + label,
-.form-group textarea:valid + label,
-.form-group select:focus + label {
+.form-group input:focus+label,
+.form-group input:valid+label,
+.form-group textarea:focus+label,
+.form-group textarea:valid+label,
+.form-group select:focus+label {
     top: -8px;
     left: 16px;
     color: var(--primary-color);
@@ -1341,7 +1329,6 @@ section {
     min-height: 120px;
 }
 
-/* Footer */
 .footer {
     background: var(--text-dark);
     color: var(--text-white);
@@ -1431,7 +1418,6 @@ section {
     color: var(--primary-color);
 }
 
-/* Lightbox */
 .lightbox {
     position: fixed;
     top: 0;
@@ -1488,7 +1474,6 @@ section {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
@@ -1517,7 +1502,6 @@ section {
     box-shadow: var(--shadow-hover);
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1530,7 +1514,8 @@ section {
 }
 
 @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0px);
     }
     50% {
@@ -1539,7 +1524,11 @@ section {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateX(-50%) translateY(0);
     }
     40% {
@@ -1550,23 +1539,19 @@ section {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
     }
-    
     .hero-visual {
         height: 300px;
     }
-    
     .heritage-content {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
     .heritage-stats {
         flex-direction: row;
         gap: 1rem;
@@ -1587,64 +1572,50 @@ section {
         padding: 2rem 0;
         gap: 1rem;
     }
-
     .nav-menu.active {
         left: 0;
     }
-
     .hamburger {
         display: flex;
     }
-
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
-
     .hamburger.active span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
-
     .hero-text h1 {
         font-size: 2.5rem;
     }
-
     .hero-stats {
         justify-content: center;
     }
-
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
     }
-
     .section-header h2 {
         font-size: 2rem;
     }
-
     .cities-grid,
     .tourism-grid,
     .services-grid {
         grid-template-columns: 1fr;
     }
-
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
     .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
-
     .footer-links {
         justify-content: center;
     }
-
     .floating-cards {
         display: none;
     }
@@ -1654,97 +1625,130 @@ section {
     .container {
         padding: 0 15px;
     }
-
     .hero-text h1 {
         font-size: 2rem;
     }
-
     .hero-stats {
         flex-direction: column;
         gap: 1rem;
     }
-
     .btn {
         padding: 12px 20px;
         font-size: 0.9rem;
     }
-
     .tourism-card,
     .service-card {
         padding: 2rem 1.5rem;
     }
-
     .contact-form {
         padding: 2rem;
     }
-    
-    /* Cities responsive */
     .cities-grid {
         grid-template-columns: 1fr;
     }
-    
     .city-modal-header {
         flex-direction: column;
         text-align: center;
     }
-    
     .city-modal-header img {
         width: 100%;
         height: 200px;
     }
-    
     .attraction-item {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
     }
-    
     .attraction-detail {
         grid-template-columns: 1fr;
         gap: 1rem;
         text-align: center;
     }
-    
     .attraction-image {
         width: 100%;
         height: 200px;
     }
-    
     .attraction-content {
         grid-template-columns: 1fr;
         gap: 1rem;
         text-align: center;
     }
-    
     .attraction-icon {
         margin: 0 auto;
     }
-    
     .attraction-info {
         grid-column: 1;
     }
 }
 
-/* Utility Classes */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center {
+    text-align: center;
+}
 
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
+.text-left {
+    text-align: left;
+}
 
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
+.text-right {
+    text-align: right;
+}
 
-.d-none { display: none; }
-.d-block { display: block; }
-.d-flex { display: flex; }
-.d-grid { display: grid; }
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
 
-.opacity-0 { opacity: 0; }
-.opacity-50 { opacity: 0.5; }
-.opacity-100 { opacity: 1; }
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.mt-1 {
+    margin-top: 0.5rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
